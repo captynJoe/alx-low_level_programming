@@ -6,7 +6,7 @@ include <stdio.h>
  * return 0
  */
 
-int main()
+int void()
 {
 puts("\"programming is like building a multilingual puzzle");
 return(0);
