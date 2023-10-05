@@ -1,13 +1,13 @@
-include <stdio.h>
-
+#include <stdio.h>
 /**
- * main -prints "Programming is like building a multilingual
- * puzzle"
- * return 0
+ * main - prints the main
+ *
+ * Description: 'the program's description'
+ *
+ * Return: Always 0 (Success)
  */
-
-int void()
+int main(void)
 {
 puts("\"programming is like building a multilingual puzzle");
-return(0);
+return (0);
 }
