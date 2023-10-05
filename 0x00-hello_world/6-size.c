@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - print various sizes in pc
- * Return: Always 0 (Success)
+ * Return: Always 1 (Success)
  */
 int main(void)
 {
