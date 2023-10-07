@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - The main 
+ * main - The main
  * Return: Always 0
  */
 
@@ -27,6 +27,6 @@ int main(void)
 
 putchar('\n');
 
-return (0) ;
+return (0);
 
 }
