@@ -2,6 +2,7 @@
 
 /**
  * _isalpha - Alphabetic char
+ * c - The main int
  * Return:1
  */
 
