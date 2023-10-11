@@ -1,12 +1,11 @@
 #include "main.h"
 
 /**
- * main - The entry point
+ * main - The main part
  * Return: Always 0
  */
 
 int main(void)
-
 {
 _putchar('_');
 _putchar('p');
