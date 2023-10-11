@@ -34,6 +34,6 @@ _putchar(32);
 _putchar(z + '0');
 }
 }
-_putchar('\n')
+_putchar('\n');
 }
 }
