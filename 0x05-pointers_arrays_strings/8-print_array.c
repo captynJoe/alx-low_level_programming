@@ -10,16 +10,18 @@
 
 void print_array(int *a, int n)
 {
-int j;
-for (j = 0; j < n; j++)
+    int i;
 
-{
-printf("%d,", a[j]);
-if (j != (n - 1))
+    for (i = 0; i < (n - 1); i++)
+    {
+        printf("%d, ", a[i]);
+    }
 
-{
-printf(", ");
+    if (i == (n - 1))
+    {
+        printf("%d", a[n - 1]);
+    }
+
+    printf("\n");
 }
-}
-printf("\n");
-}
+
