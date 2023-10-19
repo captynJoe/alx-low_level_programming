@@ -1,7 +1,4 @@
 #include <stdio.h>
-/**
- * main - Entry point of the program
- */
 
 int main(void)
 {
@@ -24,4 +21,3 @@ p = &n;
 printf("a[2] = %d\n", a[2]);
 return (0);
 }
-
