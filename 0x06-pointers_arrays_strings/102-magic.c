@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+/**
+ * main - Entry of the program
+ */
+
 int main(void)
 {
 int n;
