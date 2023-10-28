@@ -1,1 +1,1 @@
-0x06-pointers_arrays_strings
+Solution to task 0x09 static libraries
