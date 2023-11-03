@@ -115,16 +115,20 @@ int l1, l2, ln, ti, i;
 char *a;
 char *t;
 char e[] = "Error\n";
-
-
 if (argc != 3 || check_for_digits(argv))
 {
 for (ti = 0; e[ti]; ti++)
 _putchar(e[ti]);
 exit(98);
 }
-for (l1 = 0; argv[1][l1]; l1++)
-for (l2 = 0; argv[2][l2]; l2++)
+for
+(l1 = 0;
+argv[1][l1];
+l1++);
+for
+(l2 = 0;
+argv[2][l2];
+l2++);
 ln = l1 + l2 + 1;
 a = malloc(ln *sizeof(char));
 if (a == NULL)
