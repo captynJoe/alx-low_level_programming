@@ -1,6 +1,3 @@
-======= 3-array_range.c ======
-
-
 #include <stdlib.h>
 #include "main.h"
 
