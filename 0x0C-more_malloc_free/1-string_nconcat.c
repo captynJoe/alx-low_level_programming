@@ -28,4 +28,17 @@ y = 0;
 }
 else
 {
-for (y = 0; s2[y]; ++y)
+for (y = 0; s2[y]; ++y);
+}
+if (y > n)
+y = n;
+s = malloc(sizeof(char) * (x + y + 1));
+if (s == NULL)
+return (NULL);
+for (z = 0; z < x; z++)
+s[z] = s1[z];
+for (z = 0; z < y; z++)
+s[z + x] = s2[z];
+s[x + y] = '\0';
+return (s);
+}
