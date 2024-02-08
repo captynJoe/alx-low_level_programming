@@ -1,51 +1,53 @@
 #include "hash_tables.h"
+
 /**
-* hash_table_set - add an element to the table
-* @ht: hash table
-* @key: key of the element
-* @value: value of the element
-* Return: an element added to the table
-*/
+ * hash_table_set - Add or update an element in a hash table.
+ * @ht: A pointer to the hash table.
+ * @key: The key to add - cannot be an empty string.
+ * @value: The value associated with key.
+ *
+ * Return: Upon failure - 0.
+ *         Otherwise - 1.
+ */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int index = 0;
-	char *temporal_value = NULL;
-	hash_node_t *temporal = NULL, *new = NULL;
+	hash_node_t *new;
+	char *value_copy;
+	unsigned long int index, i;
 
-	if (!ht || !ht->array || !value)
+	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
 
-	if (strlen(key) == 0 || !key)
+	value_copy = strdup(value);
+	if (value_copy == NULL)
 		return (0);
-	temporal_value = strdup(value);
-	if (!temporal_value)
-		return (0);
-	index = key_index((unsigned char *)key, ht->size);
 
-	/* checks if a collision exists */
-	temporal = ht->array[index];
-	while (temporal)
+	index = key_index((const unsigned char *)key, ht->size);
+	for (i = index; ht->array[i]; i++)
 	{
-		if (strcmp(temporal->key, key) == 0)
+		if (strcmp(ht->array[i]->key, key) == 0)
 		{
-			free(temporal->value);
-			temporal->value = temporal_value;
-			temporal->value = strdup(value);
-			free(temporal_value);
+			free(ht->array[i]->value);
+			ht->array[i]->value = value_copy;
 			return (1);
 		}
-		temporal = temporal->next;
 	}
-	/* If a collision doesn't exits, insert node */
+
 	new = malloc(sizeof(hash_node_t));
-	if (!new)
+	if (new == NULL)
+	{
+		free(value_copy);
+		return (0);
+	}
+	new->key = strdup(key);
+	if (new->key == NULL)
 	{
 		free(new);
 		return (0);
 	}
-	new->key = strdup(key);
-	new->value = temporal_value;
+	new->value = value_copy;
 	new->next = ht->array[index];
 	ht->array[index] = new;
+
 	return (1);
 }
